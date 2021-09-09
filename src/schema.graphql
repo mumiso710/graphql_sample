@@ -1,0 +1,19 @@
+type Query {
+  info: String!
+  feed_serviceA: [Link!]!
+  feed_serviceB: [Link!]!
+  feed_redis(key: String!): String!
+  weather: String!
+}
+
+type Mutation {
+  post_serviceA(url: String!, description: String!): Link!
+  post_serviceB(url: String!, description: String!): Link!
+  post_redis(key: String!, value: String!): String
+}
+
+type Link {
+  id: ID!
+  description: String!
+  url: String!
+}
